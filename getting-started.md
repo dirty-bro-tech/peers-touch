@@ -2,6 +2,7 @@
 layout: page
 title: Getting Started
 permalink: /getting-started/
+exclude_from_i18n: true
 ---
 
 # Getting Started with Peers Touch

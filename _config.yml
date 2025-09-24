@@ -11,7 +11,7 @@ theme: minima
 # Internationalization
 languages: ['en', 'zh']
 default_lang: 'en'
-exclude_from_localization: ['assets', 'images', 'css', 'js']
+exclude_from_localization: ['assets', 'images', 'css', 'js', '_site']
 
 # Plugins
 plugins:

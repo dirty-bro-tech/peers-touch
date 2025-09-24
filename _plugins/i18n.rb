@@ -21,7 +21,7 @@ module Jekyll
   class I18nTag < Liquid::Tag
     def initialize(tag_name, key, tokens)
       super
-      @key = key.strip
+      @key = key.strip.gsub(/^['"]|['"]$/, '') # Remove surrounding quotes
     end
     
     def render(context)
@@ -46,12 +46,18 @@ module Jekyll
       languages = site.config['languages'] || ['en', 'zh']
       default_lang = site.config['default_lang'] || 'en'
       
+      # Collect original pages first to avoid infinite loop
+      original_pages = site.pages.dup
+      
       # Generate language-specific pages
       languages.each do |lang|
         next if lang == default_lang
         
-        site.pages.each do |page|
+        original_pages.each do |page|
           next if page.data['exclude_from_i18n']
+          next if page.data['lang'] # Skip already processed language pages
+          next if page.path.start_with?('assets/') # Skip asset files
+          next if page.path.end_with?('.scss', '.css', '.js') # Skip style and script files
           
           # Create language-specific version
           lang_page = page.dup
@@ -60,6 +66,11 @@ module Jekyll
           
           site.pages << lang_page
         end
+      end
+      
+      # Set default language for original pages
+      original_pages.each do |page|
+        page.data['lang'] ||= default_lang unless page.data['exclude_from_i18n']
       end
     end
   end

@@ -2,6 +2,7 @@
 layout: page
 title: Demo
 permalink: /demo/
+exclude_from_i18n: true
 ---
 
 # Interactive Demo

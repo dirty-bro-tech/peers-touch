@@ -34,9 +34,28 @@ en:
   docs:
     overview:
       title: "Project Overview"
+      description: "Comprehensive overview of the Peers Touch project, including core features and architecture."
       about: "About Peers Touch"
       about_desc: "Peers Touch is a modern real-time communication solution designed for developers."
-      core_features: "Core Features"
+      core_features:
+        title: "Core Features"
+        p2p:
+          title: "Peer-to-Peer Communication"
+          description: "Direct communication between peers without central servers"
+        cross_platform:
+          title: "Cross-Platform Support"
+          description: "Works seamlessly across different platforms and devices"
+        secure:
+          title: "Secure Communication"
+          description: "End-to-end encryption and secure protocols"
+        real_time:
+          title: "Real-Time Messaging"
+          description: "Instant message delivery with low latency"
+      quick_links:
+        title: "Quick Links"
+        product_design: "Product Design"
+        getting_started: "Getting Started"
+        demo: "Demo"
       realtime: "Real-time Communication"
       realtime_desc: "WebSocket support"
       multiplatform: "Multi-platform"
@@ -45,11 +64,27 @@ en:
       easy_integration_desc: "Simple API design"
       high_performance: "High Performance"
       high_performance_desc: "Optimized message processing"
-      quick_links: "Quick Links"
     product:
       title: "Product Design"
+      description: "User-oriented product design and usage guides."
       desc: "User-oriented product design and usage guides."
-      content_index: "Content Index"
+      content_index:
+        title: "Content Index"
+        architecture:
+          title: "System Architecture"
+          description: "Overall system design and component relationships"
+        ui_ux:
+          title: "UI/UX Design"
+          description: "User interface and experience design principles"
+        features:
+          title: "Product Features"
+          description: "Detailed feature specifications and requirements"
+        technical:
+          title: "Technical Specifications"
+          description: "Technical requirements and implementation details"
+        testing:
+          title: "Testing Strategy"
+          description: "Quality assurance and testing methodologies"
       features: "Product Features"
       user_guide: "User Guide"
       ui_design: "Interface Design"
@@ -92,9 +127,28 @@ zh:
   docs:
     overview:
       title: "项目概览"
+      description: "Peers Touch 项目的全面概述，包括核心功能和架构。"
       about: "关于 Peers Touch"
       about_desc: "Peers Touch 是一个现代化的实时通信解决方案，专为开发者设计。"
-      core_features: "核心特性"
+      core_features:
+        title: "核心特性"
+        p2p:
+          title: "点对点通信"
+          description: "无需中央服务器的对等体直接通信"
+        cross_platform:
+          title: "跨平台支持"
+          description: "在不同平台和设备上无缝工作"
+        secure:
+          title: "安全通信"
+          description: "端到端加密和安全协议"
+        real_time:
+          title: "实时消息"
+          description: "低延迟的即时消息传递"
+      quick_links:
+        title: "快速链接"
+        product_design: "产品设计"
+        getting_started: "入门指南"
+        demo: "演示"
       realtime: "实时通信"
       realtime_desc: "WebSocket 支持"
       multiplatform: "多平台"
@@ -103,11 +157,27 @@ zh:
       easy_integration_desc: "简单的 API 设计"
       high_performance: "高性能"
       high_performance_desc: "优化的消息处理"
-      quick_links: "快速链接"
     product:
       title: "产品设计"
+      description: "用户导向的产品设计和使用指南。"
       desc: "用户导向的产品设计和使用指南。"
-      content_index: "内容目录"
+      content_index:
+        title: "内容目录"
+        architecture:
+          title: "系统架构"
+          description: "整体系统设计和组件关系"
+        ui_ux:
+          title: "UI/UX 设计"
+          description: "用户界面和体验设计原则"
+        features:
+          title: "产品特性"
+          description: "详细的功能规格和需求"
+        technical:
+          title: "技术规格"
+          description: "技术要求和实现细节"
+        testing:
+          title: "测试策略"
+          description: "质量保证和测试方法"
       features: "产品特性"
       user_guide: "用户指南"
       ui_design: "界面设计"
