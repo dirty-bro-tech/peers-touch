@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Peers Touch Documentation</title>
+    <meta name="description" content="A comprehensive documentation site for Peers Touch" id="page-description">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: relative;
+        }
+
+        .language-dropdown {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .language-dropdown:hover {
+            background: #2980b9;
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Categories */
+        .categories {
+            margin-bottom: 4rem;
+        }
+
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .category-card h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        /* Features */
+        .features {
+            margin-bottom: 4rem;
+        }
+
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Quick Start */
+        .quick-start {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .quick-start h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .quick-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Language-specific styles */
+        [lang="zh"] {
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" id="site-title">Peers Touch Documentation</div>
+                <nav>
+                    <ul>
+                        <li><a href="#" id="nav-home">Home</a></li>
+                        <li><a href="#" id="nav-overview">Project Overview</a></li>
+                        <li><a href="#" id="nav-technical">Technical Documentation</a></li>
+                        <li><a href="#" id="nav-product">Product Design</a></li>
+                        <li><a href="#" id="nav-examples">Examples</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <select class="language-dropdown" id="language-select">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1 id="welcome-title">Welcome to Peers Touch Documentation</h1>
+                <p id="welcome-intro">This is a complete documentation site, organized by functionality for easy navigation and maintenance.</p>
+            </section>
+
+            <section class="categories">
+                <h2 id="categories-title">Documentation Categories</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <h3 id="overview-title">Project Overview</h3>
+                        <p id="overview-desc">Project introduction, vision and core values</p>
+                    </div>
+                    <div class="category-card">
+                        <h3 id="technical-title">Technical Documentation</h3>
+                        <p id="technical-desc">System architecture, API design, deployment guides</p>
+                    </div>
+                    <div class="category-card">
+                        <h3 id="product-title">Product Design</h3>
+                        <p id="product-desc">Product features, user guides, interface design</p>
+                    </div>
+                    <div class="category-card">
+                        <h3 id="examples-title">Examples</h3>
+                        <p id="examples-desc">Code examples, integration cases, best practices</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <h2 id="features-title">Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 id="feature-layered">Layered Organization</h3>
+                        <p id="feature-layered-desc">Categorized by function, clear and easy to find</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 id="feature-responsive">Responsive Design</h3>
+                        <p id="feature-responsive-desc">Adapts to all devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 id="feature-nav">Quick Navigation</h3>
+                        <p id="feature-nav-desc">Intuitive directory structure</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 id="feature-maintain">Easy to Maintain</h3>
+                        <p id="feature-maintain-desc">Modular documentation management</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-start">
+                <h2 id="quick-start-title">Quick Start</h2>
+                <div class="quick-links">
+                    <a href="#" class="btn btn-primary" id="demo-link">Interactive demonstration</a>
+                    <a href="#" class="btn btn-secondary" id="getting-started-link">Quick start guide</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p id="footer-desc">A comprehensive documentation site for Peers Touch</p>
+        </div>
+    </footer>
+
+    <script>
+        // Translation data
+        const translations = {
+            en: {
+                'site-title': 'Peers Touch Documentation',
+                'page-title': 'Peers Touch Documentation',
+                'page-description': 'A comprehensive documentation site for Peers Touch',
+                'nav-home': 'Home',
+                'nav-overview': 'Project Overview',
+                'nav-technical': 'Technical Documentation',
+                'nav-product': 'Product Design',
+                'nav-examples': 'Examples',
+                'welcome-title': 'Welcome to Peers Touch Documentation',
+                'welcome-intro': 'This is a complete documentation site, organized by functionality for easy navigation and maintenance.',
+                'categories-title': 'Documentation Categories',
+                'overview-title': 'Project Overview',
+                'overview-desc': 'Project introduction, vision and core values',
+                'technical-title': 'Technical Documentation',
+                'technical-desc': 'System architecture, API design, deployment guides',
+                'product-title': 'Product Design',
+                'product-desc': 'Product features, user guides, interface design',
+                'examples-title': 'Examples',
+                'examples-desc': 'Code examples, integration cases, best practices',
+                'features-title': 'Features',
+                'feature-layered': 'Layered Organization',
+                'feature-layered-desc': 'Categorized by function, clear and easy to find',
+                'feature-responsive': 'Responsive Design',
+                'feature-responsive-desc': 'Adapts to all devices',
+                'feature-nav': 'Quick Navigation',
+                'feature-nav-desc': 'Intuitive directory structure',
+                'feature-maintain': 'Easy to Maintain',
+                'feature-maintain-desc': 'Modular documentation management',
+                'quick-start-title': 'Quick Start',
+                'demo-link': 'Interactive demonstration',
+                'getting-started-link': 'Quick start guide',
+                'footer-desc': 'A comprehensive documentation site for Peers Touch'
+            },
+            zh: {
+                'site-title': 'Peers Touch 文档',
+                'page-title': 'Peers Touch 文档',
+                'page-description': 'Peers Touch 的完整文档站点',
+                'nav-home': '首页',
+                'nav-overview': '项目概览',
+                'nav-technical': '技术文档',
+                'nav-product': '产品设计',
+                'nav-examples': '使用示例',
+                'welcome-title': '欢迎来到 Peers Touch 文档',
+                'welcome-intro': '这是一个完整的文档站点，按功能分类组织，便于查找和维护。',
+                'categories-title': '文档分类',
+                'overview-title': '项目概览',
+                'overview-desc': '项目介绍、愿景和核心价值',
+                'technical-title': '技术文档',
+                'technical-desc': '系统架构、API设计、部署指南',
+                'product-title': '产品设计',
+                'product-desc': '产品特性、用户指南、界面设计',
+                'examples-title': '使用示例',
+                'examples-desc': '代码示例、集成案例、最佳实践',
+                'features-title': '特点',
+                'feature-layered': '分层组织',
+                'feature-layered-desc': '按功能分类，清晰易找',
+                'feature-responsive': '响应式设计',
+                'feature-responsive-desc': '适配所有设备',
+                'feature-nav': '快速导航',
+                'feature-nav-desc': '直观的目录结构',
+                'feature-maintain': '易于维护',
+                'feature-maintain-desc': '模块化文档管理',
+                'quick-start-title': '快速开始',
+                'demo-link': '交互式演示',
+                'getting-started-link': '快速上手',
+                'footer-desc': 'Peers Touch 的完整文档站点'
+            }
+        };
+
+        // Language switching functionality
+        const languageSelect = document.getElementById('language-select');
+        const htmlRoot = document.getElementById('html-root');
+
+        function switchLanguage(lang) {
+            // Update HTML lang attribute
+            htmlRoot.setAttribute('lang', lang);
+            
+            // Update page title and meta description
+            document.title = translations[lang]['page-title'];
+            document.getElementById('page-description').setAttribute('content', translations[lang]['page-description']);
+            
+            // Update all translatable elements
+            Object.keys(translations[lang]).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Save language preference
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // Initialize language
+        const savedLang = localStorage.getItem('preferred-language') || 'en';
+        languageSelect.value = savedLang;
+        switchLanguage(savedLang);
+
+        // Language select event listener
+        languageSelect.addEventListener('change', (e) => {
+            switchLanguage(e.target.value);
+        });
+
+        // Detect browser language on first visit
+        if (!localStorage.getItem('preferred-language')) {
+            const browserLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
+            languageSelect.value = browserLang;
+            switchLanguage(browserLang);
+        }
+    </script>
+</body>
+</html>

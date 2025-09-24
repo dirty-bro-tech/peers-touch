@@ -2,7 +2,7 @@
 layout: page
 title: "{% t 'docs.overview.title' %}"
 description: "{% t 'docs.overview.description' %}"
-lang: en
+lang: zh
 ---
 
 # {% t 'docs.overview.title' %}

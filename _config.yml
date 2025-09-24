@@ -8,6 +8,11 @@ markdown: kramdown
 highlighter: rouge
 theme: minima
 
+# Internationalization
+languages: ['en', 'zh']
+default_lang: 'en'
+exclude_from_localization: ['assets', 'images', 'css', 'js']
+
 # Plugins
 plugins:
   - jekyll-feed
@@ -22,15 +27,15 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-# Navigation
+# Navigation (will be translated via i18n data)
 navigation:
-  - title: 项目概览
+  - key: nav.overview
     url: /docs/overview/
-  - title: 技术文档
+  - key: nav.technical
     url: /docs/technical/
-  - title: 产品设计
+  - key: nav.product
     url: /docs/product/
-  - title: 使用示例
+  - key: nav.examples
     url: /docs/examples/
 
 # Collections

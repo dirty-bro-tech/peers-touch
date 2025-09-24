@@ -2,7 +2,7 @@
 layout: home
 title: "{% t 'home.title' %}"
 description: "{% t 'home.description' %}"
-lang: en
+lang: zh
 ---
 
 # {% t 'home.welcome' %}
