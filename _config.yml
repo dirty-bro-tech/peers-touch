@@ -1,0 +1,40 @@
+title: Peers Touch Documentation
+description: A comprehensive documentation site for Peers Touch
+url: "http://localhost:4000"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Navigation
+navigation:
+  - title: 项目概览
+    url: /docs/overview/
+  - title: 技术文档
+    url: /docs/technical/
+  - title: 产品设计
+    url: /docs/product/
+  - title: 使用示例
+    url: /docs/examples/
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
