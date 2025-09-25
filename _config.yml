@@ -11,11 +11,13 @@ theme: minima
 # Internationalization
 languages: ['en', 'zh']
 default_lang: 'en'
-exclude_from_localization: ['assets', 'images', 'css', 'js', '_site']
+# Remove assets from exclude list to allow SCSS compilation
+exclude_from_localization: ['images', '_site']
 
 # Plugins
 plugins:
   - jekyll-feed
+  - jekyll-sass-converter
 
 # Exclude from processing
 exclude:

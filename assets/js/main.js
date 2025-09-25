@@ -1,5 +1,5 @@
 // iOS 17 Style Jekyll Site JavaScript
-// Handles language switching, mobile navigation, and smooth animations
+// Handles language switching, mobile navigation, smooth animations, and user interactions
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
@@ -8,24 +8,25 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initSmoothScrolling();
     initThemeDetection();
+    initUserAvatar();
 });
 
-// Language Switcher Functionality
+// Language Switcher Functionality - iOS 17 Style
 function initLanguageSwitcher() {
     const languageSwitcher = document.querySelector('.language-switcher');
     if (!languageSwitcher) return;
     
-    const dropdownToggle = languageSwitcher.querySelector('.dropdown-toggle');
-    const dropdownMenu = languageSwitcher.querySelector('.dropdown-menu');
+    const languageButton = languageSwitcher.querySelector('.language-button');
+    const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
     
-    if (!dropdownToggle || !dropdownMenu) return;
+    if (!languageButton || !languageDropdown) return;
     
     // Toggle dropdown on click
-    dropdownToggle.addEventListener('click', function(e) {
+    languageButton.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         
-        const isOpen = dropdownMenu.classList.contains('show');
+        const isOpen = languageSwitcher.classList.contains('open');
         
         if (isOpen) {
             closeDropdown();
@@ -49,42 +50,42 @@ function initLanguageSwitcher() {
     });
     
     function openDropdown() {
-        dropdownMenu.classList.add('show');
-        dropdownToggle.setAttribute('aria-expanded', 'true');
+        languageSwitcher.classList.add('open');
+        languageButton.setAttribute('aria-expanded', 'true');
         
         // Focus first menu item for accessibility
-        const firstLink = dropdownMenu.querySelector('a');
-        if (firstLink) {
-            setTimeout(() => firstLink.focus(), 100);
+        const firstOption = languageDropdown.querySelector('.language-option');
+        if (firstOption) {
+            setTimeout(() => firstOption.focus(), 100);
         }
     }
     
     function closeDropdown() {
-        dropdownMenu.classList.remove('show');
-        dropdownToggle.setAttribute('aria-expanded', 'false');
+        languageSwitcher.classList.remove('open');
+        languageButton.setAttribute('aria-expanded', 'false');
     }
     
     // Handle keyboard navigation in dropdown
-    dropdownMenu.addEventListener('keydown', function(e) {
-        const links = Array.from(dropdownMenu.querySelectorAll('a'));
-        const currentIndex = links.indexOf(document.activeElement);
+    languageDropdown.addEventListener('keydown', function(e) {
+        const options = Array.from(languageDropdown.querySelectorAll('.language-option'));
+        const currentIndex = options.indexOf(document.activeElement);
         
         switch(e.key) {
             case 'ArrowDown':
                 e.preventDefault();
-                const nextIndex = (currentIndex + 1) % links.length;
-                links[nextIndex].focus();
+                const nextIndex = (currentIndex + 1) % options.length;
+                options[nextIndex].focus();
                 break;
             case 'ArrowUp':
                 e.preventDefault();
-                const prevIndex = currentIndex > 0 ? currentIndex - 1 : links.length - 1;
-                links[prevIndex].focus();
+                const prevIndex = currentIndex > 0 ? currentIndex - 1 : options.length - 1;
+                options[prevIndex].focus();
                 break;
             case 'Tab':
                 if (e.shiftKey && currentIndex === 0) {
                     closeDropdown();
-                    dropdownToggle.focus();
-                } else if (!e.shiftKey && currentIndex === links.length - 1) {
+                    languageButton.focus();
+                } else if (!e.shiftKey && currentIndex === options.length - 1) {
                     closeDropdown();
                 }
                 break;
@@ -323,12 +324,37 @@ function safeQuerySelectorAll(selector, context = document) {
     }
 }
 
+// User Avatar Functionality
+function initUserAvatar() {
+    const userAvatar = document.querySelector('.user-avatar');
+    if (!userAvatar) return;
+    
+    // Add hover effect
+    userAvatar.addEventListener('mouseenter', function() {
+        this.classList.add('hover');
+    });
+    
+    userAvatar.addEventListener('mouseleave', function() {
+        this.classList.remove('hover');
+    });
+    
+    // Add click handler (can be extended for profile dropdown)
+    userAvatar.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('User avatar clicked');
+        // Can be extended to show user profile dropdown
+    });
+}
+
 // Export functions for potential external use
 window.PeersTouchSite = {
     initLanguageSwitcher,
     initMobileNavigation,
     initScrollAnimations,
     initSmoothScrolling,
+    initThemeDetection,
+    initUserAvatar,
     debounce,
     throttle
 };

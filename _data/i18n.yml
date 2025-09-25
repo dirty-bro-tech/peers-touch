@@ -9,7 +9,6 @@ en:
     technical: "Technical Documentation"
     product: "Product Design"
     examples: "Examples"
-    demo: "Demo"
     getting_started: "Getting Started"
   home:
     welcome: "Welcome to Peers Touch Documentation"
@@ -20,7 +19,6 @@ en:
     product_desc: "Product features, user guides, interface design"
     examples_desc: "Code examples, integration cases, best practices"
     quick_start: "Quick Start"
-    demo_desc: "Interactive demonstration"
     getting_started_desc: "Quick start guide"
     features: "Features"
     layered_org: "Layered Organization"
@@ -55,7 +53,6 @@ en:
         title: "Quick Links"
         product_design: "Product Design"
         getting_started: "Getting Started"
-        demo: "Demo"
       realtime: "Real-time Communication"
       realtime_desc: "WebSocket support"
       multiplatform: "Multi-platform"
@@ -85,6 +82,18 @@ en:
         testing:
           title: "Testing Strategy"
           description: "Quality assurance and testing methodologies"
+        feature_design:
+          title: "Product Feature Design"
+          description: "Detailed design of product features."
+        main_architecture:
+          title: "Main Architecture"
+          description: "The main architecture of the product."
+        main_design:
+          title: "Main Design"
+          description: "The main design of the product."
+        main_hardware:
+          title: "Main Hardware"
+          description: "The main hardware of the product."
       features: "Product Features"
       user_guide: "User Guide"
       ui_design: "Interface Design"
@@ -102,7 +111,6 @@ zh:
     technical: "技术文档"
     product: "产品设计"
     examples: "使用示例"
-    demo: "演示"
     getting_started: "入门指南"
   home:
     welcome: "欢迎来到 Peers Touch 文档"
@@ -113,7 +121,6 @@ zh:
     product_desc: "产品特性、用户指南、界面设计"
     examples_desc: "代码示例、集成案例、最佳实践"
     quick_start: "快速开始"
-    demo_desc: "交互式演示"
     getting_started_desc: "快速上手"
     features: "特点"
     layered_org: "分层组织"
@@ -148,7 +155,6 @@ zh:
         title: "快速链接"
         product_design: "产品设计"
         getting_started: "入门指南"
-        demo: "演示"
       realtime: "实时通信"
       realtime_desc: "WebSocket 支持"
       multiplatform: "多平台"
@@ -178,6 +184,18 @@ zh:
         testing:
           title: "测试策略"
           description: "质量保证和测试方法"
+        feature_design:
+          title: "产品特性设计"
+          description: "产品特性的详细设计。"
+        main_architecture:
+          title: "主要架构"
+          description: "产品的主要架构。"
+        main_design:
+          title: "主要设计"
+          description: "产品的主要设计。"
+        main_hardware:
+          title: "主要硬件"
+          description: "产品的主要硬件。"
       features: "产品特性"
       user_guide: "用户指南"
       ui_design: "界面设计"

@@ -29,7 +29,8 @@
       {% endif %}
     {% endfor %}
     
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/card-grid.css' | relative_url }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     
     {%- feed_meta -%}
@@ -49,5 +50,20 @@
     </main>
 
     {%- include footer.html -%}
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll(".trigger a");
+
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === currentPath) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>

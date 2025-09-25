@@ -1,28 +1,41 @@
 <header class="site-header" role="banner">
-  <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      {% t 'site.title' %}
-    </a>
+    <div class="wrapper">
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+        <img src="/assets/images/peers-logo.jpeg" alt="Peers Touch Logo" class="site-logo">
+        {% t 'site.title' %}
+      </a>
 
-    <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-      <label for="nav-trigger">
-        <span class="menu-icon">
-          <svg viewBox="0 0 18 15" width="18px" height="15px">
-            <path d="m0,1.5h18v1.5H0V1.5Zm0,6h18v1.5H0v-1.5Zm0,6h18v1.5H0v-1.5Z"/>
-          </svg>
-        </span>
-      </label>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 24 24" width="24px" height="24px">
+              <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/>
+            </svg>
+          </span>
+        </label>
 
-      <div class="trigger">
-        {% for item in site.navigation %}
-          <a class="page-link" href="{{ item.url | relative_url }}">
-            {% t item.key %}
-          </a>
-        {% endfor %}
-        
+        <div class="trigger">
+            <a class="page-link" href="/docs/overview/">
+              {% t 'nav.overview' %}
+            </a>
+            <a class="page-link" href="/docs/technical/">
+              {% t 'nav.technical' %}
+            </a>
+            <a class="page-link" href="/docs/product/">
+              {% t 'nav.product' %}
+            </a>
+            <a class="page-link" href="/docs/examples/">
+              {% t 'nav.examples' %}
+            </a>
+        </div>
+      </nav>
+
+      <div class="user-nav">
         {% include language_switcher.html %}
+        <div class="user-avatar">
+          <!-- User avatar will be displayed here -->
+        </div>
       </div>
-    </nav>
-  </div>
-</header>
+    </div>
+  </header>

@@ -1,4 +1,14 @@
-# Peers-Touch产品理念与主体设计
+---
+layout: page
+title: "Peers-Touch产品理念与主体设计"
+description: "Peers-Touch产品设计理念、核心价值和设计原则"
+lang: zh
+created_date: 2024-01-15
+updated_date: 2025-09-25
+changelog: |
+  - 2024-01-15: 初始版本创建
+  - 2025-09-25: 添加编写日期、更新日期和更新日志字段
+---
 
 ## 什么是Peers-Touch
 
