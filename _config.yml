@@ -1,7 +1,7 @@
 title: Peers Touch Documentation
 description: A comprehensive documentation site for Peers Touch
-url: "http://localhost:4000"
-baseurl: ""
+url: "https://dirty-bro-tech.github.io"
+baseurl: "/peers-touch"
 
 # Build settings
 markdown: kramdown
