@@ -1,7 +1,7 @@
 title: Peers Touch Documentation
 description: A comprehensive documentation site for Peers Touch
 url: "https://dirty-bro-tech.github.io"
-baseurl: "/peers-touch"
+baseurl: ""
 
 # Build settings
 markdown: kramdown

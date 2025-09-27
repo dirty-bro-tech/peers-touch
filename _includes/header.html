@@ -31,11 +31,10 @@
         </div>
       </nav>
 
-      <div class="user-nav">
-        {% include language_switcher.html %}
-        <div class="user-avatar">
-          <!-- User avatar will be displayed here -->
+      {% if site.languages.size > 1 %}
+        <div class="user-nav">
+          {% include language_switcher.html %}
         </div>
-      </div>
+      {% endif %}
     </div>
   </header>

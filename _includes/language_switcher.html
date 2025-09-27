@@ -1,13 +1,13 @@
 <div class="language-switcher">
   <button class="language-button" type="button" aria-haspopup="menu" aria-expanded="false">
-    {% assign current_lang_data = site.data.i18n[current_lang] %}
-    <span class="flag">{% if current_lang == 'en' %}🇺🇸{% elsif current_lang == 'zh' %}🇨🇳{% endif %}</span>
+    {% assign current_lang_data = site.data.i18n[page.lang] %}
+    <span class="flag">{% if page.lang == 'en' %}🇺🇸{% elsif page.lang == 'zh' %}🇨🇳{% endif %}</span>
     <span class="language-name">{{ current_lang_data.site.language }}</span>
     <span class="chevron"></span>
   </button>
   <div class="language-dropdown" role="menu">
     {% for lang_code in site.languages %}
-      {% if lang_code != current_lang %}
+      {% if lang_code != page.lang %}
         {% assign target_lang_data = site.data.i18n[lang_code] %}
         {% if lang_code == site.default_lang %}
           {% assign target_url = page.url | remove_first: page.lang | remove_first: '/' %}
@@ -22,3 +22,24 @@
     {% endfor %}
   </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const switcher = document.querySelector('.language-switcher');
+  const button = switcher.querySelector('.language-button');
+  const dropdown = switcher.querySelector('.language-dropdown');
+
+  button.addEventListener('click', function (event) {
+    event.stopPropagation();
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', !isExpanded);
+    switcher.classList.toggle('open');
+  });
+
+  document.addEventListener('click', function () {
+    if (switcher.classList.contains('open')) {
+      button.setAttribute('aria-expanded', 'false');
+      switcher.classList.remove('open');
+    }
+  });
+});
+</script>

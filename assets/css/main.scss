@@ -215,13 +215,7 @@ body {
   gap: 16px;
 }
 
-.user-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--system-gray5);
-  cursor: pointer;
-}
+
 
 // Mobile Navigation
 .nav-trigger {
@@ -260,9 +254,7 @@ body {
   transition: background-color 0.2s ease;
 }
 
-.language-button:hover {
-  background-color: var(--fill-tertiary);
-}
+
 
 .language-dropdown {
   position: absolute;
